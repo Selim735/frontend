@@ -59,8 +59,7 @@ export class AdminComponent implements OnInit{
       icon: 'fas fa-tachometer-alt',
       isOpen: true,
       subItems: [
-        { label: 'Overview', route: '/admin/dashboard' },
-        { label: 'Analytics', route: '/admin/analytics' }
+       
       ]
     },
     {
@@ -81,15 +80,6 @@ export class AdminComponent implements OnInit{
         { label: 'Maintenance', route: '/admin/maintenance' }
       ]
     },
-    {
-      label: 'User Management',
-      icon: 'fas fa-users',
-      isOpen: false,
-      subItems: [
-        { label: 'Passengers', route: '/admin/passengers' },
-        { label: 'Drivers', route: '/admin/drivers' }
-      ]
-    }
   ];
 
   userMenuItems: UserMenuItem[] = [
