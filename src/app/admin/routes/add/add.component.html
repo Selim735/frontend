@@ -1,0 +1,102 @@
+<!-- app.component.html -->
+<div class="min-h-screen bg-gray-100">
+    <!-- Sidebar -->
+    <aside class="fixed inset-y-0 left-0 w-64 bg-gray-900 text-white transition-transform duration-300 transform"
+           [ngClass]="{'translate-x-0': isSidebarOpen, '-translate-x-full': !isSidebarOpen}">
+      <!-- Logo -->
+      <div class="p-4 border-b border-gray-800">
+        <div class="flex items-center space-x-3">
+          <img src="assets/logo.png" alt="Logo" class="h-8 w-8">
+          <span class="text-xl font-bold">Havaist Admin</span>
+        </div>
+      </div>
+  
+      <!-- Navigation -->
+      <nav class="p-4 space-y-2">
+        <ng-container *ngFor="let item of menuItems">
+          <!-- Menu Item -->
+          <div class="space-y-2">
+            <button (click)="item.isOpen = !item.isOpen"
+                    class="w-full flex items-center justify-between p-2 rounded-lg hover:bg-gray-800 transition-colors">
+              <div class="flex items-center space-x-3">
+                <i [class]="item.icon" class="text-lg"></i>
+                <span>{{ item.label }}</span>
+              </div>
+              <i class="fas fa-chevron-down transition-transform"
+                 [class.rotate-180]="item.isOpen"></i>
+            </button>
+  
+            <!-- Submenu -->
+            <div *ngIf="item.isOpen" class="pl-4 space-y-2">
+              <a *ngFor="let subItem of item.subItems"
+                 [routerLink]="subItem.route"
+                 routerLinkActive="bg-blue-600"
+                 class="block p-2 rounded-lg text-sm hover:bg-gray-800 transition-colors">
+                {{ subItem.label }}
+              </a>
+            </div>
+          </div>
+        </ng-container>
+      </nav>
+    </aside>
+  
+    <!-- Main Content -->
+    <div class="ml-64">
+      <!-- Top Navigation -->
+      <header class="bg-white shadow-sm">
+        <div class="flex items-center justify-between p-4">
+          <!-- Search -->
+          <div class="flex-1 max-w-lg">
+            <div class="relative">
+              <input type="text" 
+                     placeholder="Search..."
+                     class="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-1 focus:ring-blue-500">
+              <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+          </div>
+  
+          <!-- Right Menu -->
+          <div class="flex items-center space-x-4">
+            <!-- Notifications -->
+            <button class="relative p-2 text-gray-600 hover:text-gray-900">
+              <i class="fas fa-bell"></i>
+              <span class="absolute top-0 right-0 h-4 w-4 bg-red-500 rounded-full text-xs text-white flex items-center justify-center">
+                3
+              </span>
+            </button>
+  
+            <!-- User Menu -->
+            <div class="relative" #userMenu>
+              <button (click)="isUserMenuOpen = !isUserMenuOpen"
+                      class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
+                <img src="assets/avatar.jpg" alt="User" class="h-8 w-8 rounded-full">
+                <span class="font-medium">John Doe</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+  
+              <!-- Dropdown Menu -->
+              <div *ngIf="isUserMenuOpen"
+                   class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2">
+                <a *ngFor="let item of userMenuItems"
+                   [routerLink]="item.route"
+                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                  <i [class]="item.icon" class="mr-2"></i>
+                  {{ item.label }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+  
+      <!-- Dashboard Content -->
+      <main class="p-6">
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          
+        </div>
+      </main>
+    </div>
+  </div>
+
+  
