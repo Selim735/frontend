@@ -13,6 +13,7 @@ import { RoutesComponent } from './admin/routes/routes.component';
 import { AddComponent } from './admin/routes/add/add.component';
 import { FleetComponent } from './admin/fleet/fleet.component';
 import { MaintenanceComponent } from './admin/maintenance/maintenance.component';
+import { PassengerComponent } from './passenger/passenger.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +25,9 @@ import { MaintenanceComponent } from './admin/maintenance/maintenance.component'
     RoutesComponent,
     AddComponent,
     FleetComponent,
-    MaintenanceComponent
-    // (VehiculeComponent is standalone elsewhere, so it's not here)
+    MaintenanceComponent,
+    //PassengerComponent
+
   ],
   imports: [
     FormsModule,

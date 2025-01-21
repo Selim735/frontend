@@ -10,10 +10,10 @@ export interface Vehicule {
 }
 
 @Injectable({
-  providedIn: 'root', // Make sure the service is provided globally
+  providedIn: 'root',
 })
 export class VehiculeService {
-  private baseUrl = 'http://localhost:9090/transposync/vehicules'; // Adjust to your backend URL
+  private baseUrl = 'http://localhost:9090/transposync/vehicules';
 
   constructor(private http: HttpClient) {}
 
