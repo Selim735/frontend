@@ -7,15 +7,15 @@
           <!-- Logo Section -->
           <div class="flex items-center">
             <div class="flex-shrink-0 flex items-center">
-              <img class="h-10 w-auto" src="assets/logo.png" alt="Havaist Logo">
+              <img class="h-10 w-auto" src="assets/logo.png" alt="transposync Logo">
               <span class="ml-3 text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                havaist
+                TranspoSync
               </span>
             </div>
-  
+
             <!-- Desktop Navigation -->
             <div class="hidden md:ml-12 md:flex md:space-x-8">
-              <a *ngFor="let item of navItems" 
+              <a *ngFor="let item of navItems"
                  [routerLink]="item.route"
                  routerLinkActive="text-blue-600"
                  class="inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200">
@@ -24,7 +24,7 @@
               </a>
             </div>
           </div>
-  
+
           <!-- User Menu & Mobile Button -->
           <div class="flex items-center">
             <div class="flex items-center">
@@ -35,7 +35,7 @@
                   <span class="text-sm font-medium">EN</span>
                 </button>
               </div>
-  
+
               <!-- Profile dropdown -->
               <div class="ml-3 relative">
                 <button class="p-1 rounded-full text-gray-600 hover:text-blue-600 focus:outline-none">
@@ -44,10 +44,10 @@
                 </button>
               </div>
             </div>
-  
+
             <!-- Mobile menu button -->
             <div class="flex items-center md:hidden ml-3">
-              <button (click)="toggleMobileMenu()" 
+              <button (click)="toggleMobileMenu()"
                       class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-blue-600 focus:outline-none">
                 <i class="fas" [class.fa-bars]="!isMobileMenuOpen" [class.fa-times]="isMobileMenuOpen"></i>
               </button>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- Mobile Navigation -->
       <div class="md:hidden" [class.hidden]="!isMobileMenuOpen">
         <div class="pt-2 pb-3 space-y-1">
@@ -69,17 +69,17 @@
         </div>
       </div>
     </nav>
-  
+
     <!-- Hero Section -->
     <div class="container mx-auto px-4 py-8">
       <div class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
         <!-- Text Content -->
         <div class="w-full md:w-1/2 space-y-6">
           <h1 class="text-4xl font-bold text-gray-900">
-            Welcome to <span class="text-blue-600">Havaist</span>
+            Welcome to <span class="text-blue-600">TranspoSync</span>
           </h1>
           <p class="text-lg text-gray-600">
-            Your premium transportation solution for Istanbul Airport connections.
+            Making public transport in Tunisia stress-free.
           </p>
           <div class="pt-4">
             <button class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200">
@@ -87,12 +87,12 @@
             </button>
           </div>
         </div>
-  
+
         <!-- Booking Widget -->
         <div class="w-full md:w-1/2">
           <div class="bg-white rounded-xl shadow-xl p-6">
-            <h2 class="text-xl font-semibold text-gray-800 mb-6">Book Your Trip</h2>
-            
+            <h2 class="text-xl font-semibold text-gray-800 mb-6">Book Your Seat</h2>
+
             <!-- Booking Form -->
             <form class="space-y-4">
               <!-- From/To Fields -->
@@ -100,24 +100,31 @@
                 <div class="space-y-2">
                   <label class="block text-sm font-medium text-gray-700">From</label>
                   <select class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                    <option>Istanbul Airport</option>
+                    <option>Departure</option>
+                    <option>Station1</option>
+                    <option>Station2</option>
+                    <option>Station3</option>
                   </select>
                 </div>
                 <div class="space-y-2">
                   <label class="block text-sm font-medium text-gray-700">To</label>
                   <select class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
-                    <option>Select Destination</option>
-                    <option>4. Levent</option>
-                    <option>Taksim</option>
+                    <option>Arrival</option>
+                    <option>Station1</option>
+                    <option>Station2</option>
+                    <option>Station3</option>
                   </select>
                 </div>
               </div>
-  
+
               <!-- Date/Passengers -->
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="space-y-2">
-                  <label class="block text-sm font-medium text-gray-700">Date</label>
-                  <input type="date" class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <label class="block text-sm font-medium text-gray-700">Type</label>
+                  <select class="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                    <option>Bus</option>
+                    <option>Metro</option>
+                  </select>
                 </div>
                 <div class="space-y-2">
                   <label class="block text-sm font-medium text-gray-700">Passengers</label>
@@ -129,9 +136,9 @@
                   </select>
                 </div>
               </div>
-  
+
               <!-- Submit Button -->
-              <button type="submit" 
+              <button type="submit"
                       class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200">
                 Search Trips
               </button>
@@ -140,7 +147,7 @@
         </div>
       </div>
     </div>
-  
+
     <!-- Features Section -->
     <div class="bg-gray-50 py-12">
       <div class="container mx-auto px-4">
@@ -152,15 +159,15 @@
             <h3 class="text-xl font-semibold text-gray-800 mb-2">24/7 Service</h3>
             <p class="text-gray-600">Available round the clock for your convenience</p>
           </div>
-  
+
           <div class="bg-white p-6 rounded-xl shadow-md">
             <div class="text-blue-600 mb-4">
               <i class="fas fa-map-marker-alt text-3xl"></i>
             </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2">Multiple Routes</h3>
-            <p class="text-gray-600">Connecting all major districts in Istanbul</p>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Accessibility</h3>
+            <p class="text-gray-600">A simple and intuitive interface that works on different types of devices</p>
           </div>
-  
+
           <div class="bg-white p-6 rounded-xl shadow-md">
             <div class="text-blue-600 mb-4">
               <i class="fas fa-shield-alt text-3xl"></i>
@@ -178,28 +185,28 @@
       <div class="flex flex-col md:flex-row md:justify-between space-y-6 md:space-y-0">
         <!-- Section 1: À propos -->
         <div class="w-full md:w-1/3">
-          <h3 class="text-lg font-bold mb-3">À propos</h3>
+          <h3 class="text-lg font-bold mb-3">About</h3>
           <p class="text-sm text-gray-200">
-            Havaist est le choix idéal pour vos trajets confortables depuis et vers l'aéroport. Nous nous engageons à offrir un service de transport fiable et pratique.
+            TranspoSync is a practical solution to seamlessly connect public transportation services with passengers.
           </p>
         </div>
-  
+
         <!-- Section 2: Liens rapides -->
         <div class="w-full md:w-1/3">
           <h3 class="text-lg font-bold mb-3">Liens rapides</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="#" class="hover:text-gray-300">Sefer Saatleri</a></li>
-            <li><a href="#" class="hover:text-gray-300">Duraklar</a></li>
-            <li><a href="#" class="hover:text-gray-300">E-Bilet Sorgula</a></li>
-            <li><a href="#" class="hover:text-gray-300">Contactez-nous</a></li>
+            <li><a href="#" class="hover:text-gray-300">Trip Hours</a></li>
+            <li><a href="#" class="hover:text-gray-300">Stops</a></li>
+            <li><a href="#" class="hover:text-gray-300">Informations</a></li>
+            <li><a href="#" class="hover:text-gray-300">Contact us</a></li>
           </ul>
         </div>
-  
+
         <!-- Section 3: Contact -->
         <div class="w-full md:w-1/3">
           <h3 class="text-lg font-bold mb-3">Contact</h3>
           <p class="text-sm text-gray-200">Téléphone : +90 123 456 789</p>
-          <p>Email : contact&#64;havaist.com</p>
+          <p>Email : contact&#64;transposync.com</p>
           <div class="mt-4 flex space-x-4">
             <a href="#" class="hover:text-gray-300">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69A4.3 4.3 0 0021.9 4.5c-.84.5-1.78.85-2.76 1.05a4.3 4.3 0 00-7.57 3.93A12.15 12.15 0 013 5.1a4.3 4.3 0 001.34 5.74 4.2 4.2 0 01-1.95-.54v.05a4.3 4.3 0 003.43 4.21c-.48.13-.98.2-1.5.2-.36 0-.73-.03-1.07-.1a4.3 4.3 0 004.01 3 8.61 8.61 0 01-6.4 1.8 12.17 12.17 0 006.58 1.92c7.9 0 12.22-6.56 12.22-12.25 0-.19 0-.37-.01-.56a8.76 8.76 0 002.14-2.23z"></path></svg>
@@ -213,11 +220,10 @@
           </div>
         </div>
       </div>
-  
+
       <!-- Ligne de séparation -->
       <div class="border-t border-gray-400 mt-6 pt-6 text-center text-sm">
-        <p>© 2025 Havaist. Tous droits réservés.</p>
+        <p>© 2025 TransoSync. Tous droits réservés.</p>
       </div>
     </div>
   </footer>
-  
