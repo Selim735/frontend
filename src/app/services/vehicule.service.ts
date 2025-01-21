@@ -13,7 +13,7 @@ export interface Vehicule {
   providedIn: 'root', // Make sure the service is provided globally
 })
 export class VehiculeService {
-  private baseUrl = 'http://localhost:8080/vehicules'; // Adjust to your backend URL
+  private baseUrl = 'http://localhost:9090/transposync/vehicules/getAllVehicule'; // Adjust to your backend URL
 
   constructor(private http: HttpClient) {}
 
