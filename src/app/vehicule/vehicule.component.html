@@ -1,0 +1,55 @@
+<div class="container mx-auto">
+  <h1 class="text-2xl font-bold my-4">Vehicle Management</h1>
+
+  <!-- Add New Vehicle -->
+  <button
+    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+    (click)="addVehicule()"
+  >
+    Add Vehicle
+  </button>
+
+  <!-- Vehicle List -->
+  <table class="table-auto w-full mt-6">
+    <thead>
+      <tr class="bg-gray-200">
+        <th class="px-4 py-2">ID</th>
+        <th class="px-4 py-2">Location</th>
+        <th class="px-4 py-2">Type</th>
+        <th class="px-4 py-2">Seats</th>
+        <th class="px-4 py-2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicule of vehicules">
+        <td class="border px-4 py-2">{{ vehicule.idVehicule }}</td>
+        <td class="border px-4 py-2">{{ vehicule.localisation }}</td>
+        <td class="border px-4 py-2">{{ vehicule.type }}</td>
+        <td class="border px-4 py-2">{{ vehicule.nombrePlaces }}</td>
+        <td class="border px-4 py-2">
+          <button
+            class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-600"
+            (click)="selectVehicule(vehicule.idVehicule!)"
+          >
+            View
+          </button>
+          <button
+            class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+            (click)="deleteVehicule(vehicule.idVehicule!)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Selected Vehicle Details -->
+  <div *ngIf="selectedVehicule" class="mt-6 p-4 border rounded bg-gray-100">
+    <h2 class="text-xl font-bold">Selected Vehicle</h2>
+    <p>ID: {{ selectedVehicule.idVehicule }}</p>
+    <p>Location: {{ selectedVehicule.localisation }}</p>
+    <p>Type: {{ selectedVehicule.type }}</p>
+    <p>Seats: {{ selectedVehicule.nombrePlaces }}</p>
+  </div>
+</div>

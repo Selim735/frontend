@@ -13,6 +13,7 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     NotFoundComponent,
     AdminComponent
+    // Remove VehiculeComponent here
   ],
   imports: [
     BrowserModule,
@@ -23,4 +24,4 @@ import { AdminComponent } from './admin/admin.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

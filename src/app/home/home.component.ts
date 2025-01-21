@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Vehicule, VehiculeService } from '../services/vehicule.service';
 
 interface NavItem {
   label: string;
